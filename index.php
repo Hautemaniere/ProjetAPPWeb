@@ -45,7 +45,7 @@
                     <h1 class="mx-auto my-0 text-uppercase">LRDHG</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
                     <a class="btn btn-primary" href="#config">Les config</a>
-                    <a class="btn btn-primary" href="creataccounte.php#inscription">créer votre compte</a>
+                    <a class="btn btn-primary" href="creataccounte.php">créer votre compte</a>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
                             <li>RTX 2060 super</li>
                             <li>16go RAM</li>
                         </ul>
-                        <a href="formulaire.php?id=2" class="btn_2">Réserver sa configuration</a>
+                        <a href="formulaire.php?id=2#location" class="btn_2">Réserver sa configuration</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -82,7 +82,7 @@
                             <li>RTX 3060Ti</li>
                             <li>16go RAM</li>
                         </ul>
-                        <a href="formulaire.php?id=3" class="btn_2">Réserver sa configuration</a>
+                        <a href="formulaire.php?id=3#location" class="btn_2">Réserver sa configuration</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -94,23 +94,23 @@
                             <li>RTX 3090</li>
                             <li>32go RAM</li>
                         </ul>
-                        <a href="formulaire.php?id=1" class="btn_2">Réserver sa configuration</a>
+                        <a href="formulaire.php?id=1#location" class="btn_2">Réserver sa configuration</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Contact-->
-    <section class="contact-section bg-black" id="signup">
+    <section class="contact-section bg-black" id="signup" style="padding-top:400px">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5">
                 <div class="col-md-4 mb-3 mb-md-0">
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
                             <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Address</h4>
+                            <h4 class="text-uppercase m-0">Addresse</h4>
                             <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            <div class="small text-black-50">146 Bd de Saint-Quentin, 80090 Amiens</div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                             <i class="fas fa-envelope text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Email</h4>
                             <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                            <div class="small text-black-50"><a href="#!">equipedebg@gmail.com</a></div>
                         </div>
                     </div>
                 </div>
@@ -130,13 +130,13 @@
                             <i class="fas fa-mobile-alt text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Phone</h4>
                             <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50">061234</div>
+                            <div class="small text-black-50">0612345678</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="social d-flex justify-content-center">
-                <a class="mx-2" href="https://github.com/Hautemaniere/td_BDD"><i class="fab fa-github"></i></a>
+                <a class="mx-2" href="https://github.com/Hautemaniere/ProjetAPPWeb"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </section>
