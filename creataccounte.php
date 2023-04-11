@@ -59,8 +59,11 @@
 
                             <label><b style="color:#fff;">Prenom</b></label>
                             <input type="text" placeholder="Entrer votre prénom" autocomplete="off" name="prenom" required>
-                            <input type="submit" id='submit' value='S inscrire' class="btn_2">
 
+                            <label><b style="color:#fff;">Mot de passe</b></label>
+                            <input type="password" placeholder="Entrer votre mot de passe" autocomplete="off" name="mot_de_passe" required>
+
+                            <input type="submit" id='submit' value='S inscrire' class="btn_2">
                             <?php
                             if (isset($_GET['erreur'])) {
                                 $err = $_GET['erreur'];
