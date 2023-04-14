@@ -56,7 +56,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_tittle text-center">
-                        <h2>Les configuration disponible :</h2>
+                        <h2>Les configurations disponibles :</h2>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                             <li>RTX 2060 super</li>
                             <li>16go RAM</li>
                         </ul>
-                        <a href="formulaire.php?id=2#location" class="btn_2">Réserver sa configuration</a>
+                        <a href="formulaire.php?id=1#location" class="btn_2">Réserver sa configuration</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -82,7 +82,7 @@
                             <li>RTX 3060Ti</li>
                             <li>16go RAM</li>
                         </ul>
-                        <a href="formulaire.php?id=3#location" class="btn_2">Réserver sa configuration</a>
+                        <a href="formulaire.php?id=2#location" class="btn_2">Réserver sa configuration</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -94,7 +94,7 @@
                             <li>RTX 3090</li>
                             <li>32go RAM</li>
                         </ul>
-                        <a href="formulaire.php?id=1#location" class="btn_2">Réserver sa configuration</a>
+                        <a href="formulaire.php?id=3#location" class="btn_2">Réserver sa configuration</a>
                     </div>
                 </div>
             </div>
