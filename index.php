@@ -47,7 +47,7 @@
                     <h1 class="mx-auto my-0 text-uppercase">LRDHG</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
                     <a class="btn btn-primary" href="#config">Les config</a>
-                    <a class="btn btn-primary" href="creataccounte.php">créer votre compte</a>
+                    <a class="btn btn-primary" href="inscription.php">créer votre compte</a>
                 </div>
             </div>
         </div>
