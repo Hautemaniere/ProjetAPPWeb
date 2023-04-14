@@ -1,3 +1,8 @@
+<?php
+include("connexion2/Location.php")
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -95,7 +100,7 @@
 
                                         if (isset($_GET["id"]) && $_GET["id"] == $pcloc["id"]) {
                                             echo '<label>' . $pcloc["Marque"] . " " . $pcloc["Model"] . '</label>';
-                                            echo '<input type="hidden" value ="' . $pcloc["id"] . '" name="idpcloc">';
+                                            echo '<input type="hidden" value ="' . $pcloc["id"] . '" name="idpcloc" required>';
                                         } else {
                                             //echo '<option value ="' . $pcloc["id"] . '">' . $pcloc["Marque"] . " " . $pcloc["Model"] . "</option>";
                                             //echo "titi";
@@ -126,12 +131,12 @@
                             $tabclient = $resultats->fetchALL();
                             ?>
                             <div class="div2">
-
-                                <p><select name="idClient">
+                                
+                            <p><select name="idClient">
 
                                         <?php
                                         foreach ($tabclient as $client) {
-
+                                            
                                             echo '<option value ="' . $client["id"] . '">' . $client["nom"] . " " . $client["prenom"] . "</option>";
                                         }
                                         ?>
@@ -140,18 +145,22 @@
                             </div>
 
                             <p>
-                            <div><input type="date" name="laDate"></div>
+                            <div><input type="date" name="laDate" required></div>
                             </p>
-                            <div><input type="submit" id='submit' value="Confirmer une location" name="Valider" class="btn_2"></div>
+                            <div><input type="submit" id='submit' value="Confirmer une location" name="Valider" class="btn_2" required></div>
                         </form>
                     <?php
                             if (isset($_POST["Valider"])) {
-                                echo "Tu as choisi le " . $_POST["idpcloc"] . " id client = " . $_POST["idClient"] . " date = " . $_POST["laDate"];
-                                $requetesConsulatation = "INSERT INTO `location`(`dateheure`, `idpcloc`, `idclient`) VALUES ('" . $_POST["laDate"] . "','" . $_POST["idpcloc"] . "','" . $_POST["idClient"] . "')";
-                                $resultconsultation = $GLOBALS["pdo"]->query($requetesConsulatation);
+
+                                $newLocation = new Location(null,null,null);
+                                $newLocation->newLocation( $_POST["idClient"] , $_POST["idpcloc"] ,$_POST["laDate"]);
+
+
+                                //echo "Tu as choisi le " . $_POST["idpcloc"] . " id client = " . $_POST["idClient"] . " date = " . $_POST["laDate"];
+                                
                             }
                         } catch (Exception  $error) {
-                            echo "error est : " . $error->getMessage();
+                            echo $error->getMessage();
                         }
 
                     ?>
@@ -169,7 +178,7 @@
                             <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Address</h4>
                             <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            <div class="small text-black-50">146 Bd de Saint-Quentin, 80090 Amiens</div>
                         </div>
                     </div>
                 </div>
@@ -179,7 +188,7 @@
                             <i class="fas fa-envelope text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Email</h4>
                             <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                            <div class="small text-black-50"><a href="#!">equipedebg@gmail.com</a></div>
                         </div>
                     </div>
                 </div>
@@ -189,7 +198,7 @@
                             <i class="fas fa-mobile-alt text-primary mb-2"></i>
                             <h4 class="text-uppercase m-0">Phone</h4>
                             <hr class="my-4 mx-auto" />
-                            <div class="small text-black-50">061234</div>
+                            <div class="small text-black-50">0612345678</div>
                         </div>
                     </div>
                 </div>
