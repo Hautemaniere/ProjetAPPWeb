@@ -45,7 +45,7 @@ include("connexion2/Location.php")
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="creataccounte.php#inscription">Inscription</a></li>
+                <li class="nav-item"><a class="nav-link" href="inscription.php#inscription">Inscription</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php#config">Config</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php#signup">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="formulaire.php#location">Reservation</a></li>                </ul>
