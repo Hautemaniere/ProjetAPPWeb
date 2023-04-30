@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -53,16 +57,91 @@
         </div>
     </header>
     <!-- connexion-->
+ <section class="pricing_part padding_top" id="location">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_tittle text-center">
+                        <h2 style="font-size:35px">Connexion</h2>
+   <?php
+         try {
+            $ipserver = "exodialtdbdd.mysql.db";
+            $nomBase = "exodialtdbdd";
+            $loginPrivilege = "exodialtdbdd";
+            $passPrivilege = "Minibn80";
+            $GLOBALS["bdd"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
 
-    <form action="" method="post">
-    Nom d'Utilisateur : <input type="text" name="nom"/>
-    Mot de passe : <input type="password" name="mot_de_passe"/>
-    <input type="submit" name="connexxion">
-    </form>
+            } catch (Exception  $error) {
+            echo $error->getMessage();
+            }
 
 
 
+        if(isset($_POST['connexion'])){
+            //oui
+            $ReqSql = 'SELECT * FROM `client` WHERE `nom` = "'.$_POST['nom'].'" AND `mot_de_passe` = "'.$_POST['mot_de_passe'].'"; ';
 
+            $result = $bdd->query($ReqSql);
+            if($result->rowCount()>0){
+                $_SESSION['Connexion'] = true;
+
+            }else{ 
+                echo" mauvais log ";
+            }
+
+        }else{
+            //non
+        }
+
+        if(isset($_POST['deconnexion'])){
+            echo "Vous êtes bien déconnecter.";
+            session_unset();
+            session_destroy();
+        }
+        
+        if(isset($_SESSION['Connexion'])){
+            ?>
+            
+
+            <form action="" method="post">
+
+               <input type="submit" name="deconnexion" value="Déconnexion" class="btn_2" required>
+           </form>
+            <?php
+
+        }else{
+            ?>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-sm-6" style="width:500px">
+                    <div class="single_pricing_part">
+         <form action="" method="post">
+
+            <p>
+            <label><b style="color:#fff;">Nom :</b></label>
+            <input type="text" name="nom" value="HAUTEMANIERE" required>
+            </p>
+
+            <p>
+            <label><b style="color:#fff;">Mot de passe :</b></label>
+            <input type="text" name="mot_de_passe" value="root" required>
+            </p>
+
+            <input type="submit" name="connexion" class="btn_2" >
+
+
+
+        </form>
+         <?php
+        }
+
+
+
+    ?>
+                    </div>
+                </div>
+            </div>
+    </section>
     <!-- Contact-->
     <section class="contact-section bg-black" id="signup" style="padding-top:400px">
         <div class="container px-4 px-lg-5">
