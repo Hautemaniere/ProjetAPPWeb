@@ -31,7 +31,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="co_inscr/inscription.php#inscription">Inscription</a></li>
+                <li class="nav-item"><a class="nav-link" href="co_inscr/inscription.php">Inscription</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php#config">Config</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php#signup">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="formulaire.php#location">Reservation</a></li>
@@ -47,7 +47,7 @@
                     <h1 class="mx-auto my-0 text-uppercase">LRDHG</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
                     <a class="btn btn-primary" href="#config">Les config</a>
-                    <a class="btn btn-primary" href="inscription.php">créer votre compte</a>
+                    <a class="btn btn-primary" href="co_inscr/inscription.php#inscription.php">créer votre compte</a>
                 </div>
             </div>
         </div>

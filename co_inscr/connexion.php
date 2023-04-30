@@ -39,7 +39,7 @@ session_start()
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../inscription.php#inscription">Inscription</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inscription.php">Inscription</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.php#config">Config</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.php#signup">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="../formulaire.php#location">Reservation</a></li>
@@ -47,10 +47,10 @@ session_start()
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
+    <!-- connexion-->
     <header class="masthead">
         <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-            <section class="pricing_part padding_top" id="inscription">
+            <section class="pricing_part padding_top" id="connexion">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
@@ -92,7 +92,7 @@ session_start()
                                 if (isset($_SESSION['Connexion'])) {
                                     ?>
 
-                                    <h2 style="font-size:35px">Connexion</h2>
+
                                     <form action="" method="post">
 
                                         <input type="submit" name="deconnexion" value="Déconnexion" class="btn_2" required>
@@ -101,14 +101,17 @@ session_start()
 
                                 } else {
                                     ?>
-
+                                    <h2 style="font-size:35px">Connexion</h2>
                                 </div>
                             </div>
                         </div>
+
                         <div class="row justify-content-center">
                             <div class="col-lg-3 col-sm-6" style="width:500px">
                                 <div class="single_pricing_part">
+
                                     <form action="" method="post">
+
 
 
                                         <label><b style="color:#fff;">Nom :</b></label><br>
