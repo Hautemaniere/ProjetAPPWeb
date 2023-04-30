@@ -57,10 +57,10 @@ session_start()
                             <div class="section_tittle text-center">
                                 <?php
                                 try {
-                                    $ipserver = "exodialtdbdd.mysql.db";
-                                    $nomBase = "exodialtdbdd";
-                                    $loginPrivilege = "exodialtdbdd";
-                                    $passPrivilege = "Minibn80";
+                                    $ipserver = "*";
+                                    $nomBase = "*";
+                                    $loginPrivilege = "*";
+                                    $passPrivilege = "*";
                                     $GLOBALS["bdd"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
 
                                 } catch (Exception $error) {

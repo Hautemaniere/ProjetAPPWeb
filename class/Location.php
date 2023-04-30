@@ -3,7 +3,6 @@ class Location
 {
 
     private $id;
-
     private $idClient;
     private $idPack;
 

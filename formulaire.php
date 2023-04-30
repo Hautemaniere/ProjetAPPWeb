@@ -73,10 +73,10 @@ include("class/Location.php")
                         <h2 style="font-size:35px">Reservation</h2>
                         <?php
                         try {
-                            $ipserver = "exodialtdbdd.mysql.db";
-                            $nomBase = "exodialtdbdd";
-                            $loginPrivilege = "exodialtdbdd";
-                            $passPrivilege = "Minibn80";
+                            $ipserver = "*";
+                            $nomBase = "*";
+                            $loginPrivilege = "*";
+                            $passPrivilege = "*";
                             $GLOBALS["pdo"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
                         ?>
                             <?php
