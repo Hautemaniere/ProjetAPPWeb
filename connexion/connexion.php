@@ -35,10 +35,10 @@ session_start()
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="inscription.php#inscription">Inscription</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php#config">Config</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php#signup">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="formulaire.php#location">Reservation</a></li>
+                <li class="nav-item"><a class="nav-link" href="../inscription.php#inscription">Inscription</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php#config">Config</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php#signup">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../formulaire.php#location">Reservation</a></li>
                 </ul>
             </div>
         </div>
@@ -128,6 +128,10 @@ session_start()
             </p>
 
             <input type="submit" name="connexion" class="btn_2" >
+            
+            <br>
+            Pas encore de compte ? <a href="connexion/connexion.php">Inscivez-vous.</a>
+            <br>
 
 
 
