@@ -54,6 +54,15 @@
     </header>
     <!-- connexion-->
 
+    <form action="" method="post">
+    Nom d'Utilisateur : <input type="text" name="nom"/>
+    Mot de passe : <input type="password" name="mot_de_passe"/>
+    <input type="submit" name="connexxion">
+    </form>
+
+
+
+
     <!-- Contact-->
     <section class="contact-section bg-black" id="signup" style="padding-top:400px">
         <div class="container px-4 px-lg-5">
