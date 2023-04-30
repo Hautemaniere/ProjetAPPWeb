@@ -28,7 +28,7 @@ session_start()
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top">LRDHG</a>
+            <a class="navbar-brand" href="../index.php#page-top">LRDHG</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
@@ -62,7 +62,6 @@ session_start()
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_tittle text-center">
-                        <h2 style="font-size:35px">Connexion</h2>
    <?php
          try {
             $ipserver = "exodialtdbdd.mysql.db";
@@ -102,7 +101,7 @@ session_start()
         if(isset($_SESSION['Connexion'])){
             ?>
             
-
+            <h2 style="font-size:35px">Connexion</h2>
             <form action="" method="post">
 
                <input type="submit" name="deconnexion" value="Déconnexion" class="btn_2" required>
@@ -117,22 +116,25 @@ session_start()
                     <div class="single_pricing_part">
          <form action="" method="post">
 
-            <p>
-            <label><b style="color:#fff;">Nom :</b></label>
-            <input type="text" name="nom" value="HAUTEMANIERE" required>
-            </p>
 
-            <p>
-            <label><b style="color:#fff;">Mot de passe :</b></label>
+            <label><b style="color:#fff;">Nom :</b></label><br>
+            <input type="text" name="nom" value="HAUTEMANIERE" required>
+            <br><br>
+
+
+            <label><b style="color:#fff;">Mot de passe :</b></label><br>
             <input type="text" name="mot_de_passe" value="root" required>
-            </p>
+
+            <br><br>
+
+
+            <div style="color:#fff;">
+            Pas encore de compte ? <a href="inscription.php">Inscivez-vous.</a>
+            </div >
+
 
             <input type="submit" name="connexion" class="btn_2" >
             
-            <br>
-            Pas encore de compte ? <a href="connexion/connexion.php">Inscivez-vous.</a>
-            <br>
-
 
 
         </form>
@@ -193,7 +195,7 @@ session_start()
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

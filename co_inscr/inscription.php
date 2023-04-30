@@ -1,5 +1,5 @@
 <?php
-include("class/Utilisateur.php");
+include("../class/Utilisateur.php");
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Définir les propriétés de l'objet avec les données du formulaire
     $utilisateur->setNomUtilisateur($_POST['nom']);
-    $utilisateur->setAdresseEmail($_POST['prenom']);
+    $utilisateur->setPrenom($_POST['prenom']);
     $utilisateur->setMotDePasse($_POST['mot_de_passe']);
 
     // Enregistrer l'utilisateur dans la base de données
@@ -32,9 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/style_config.css" rel="stylesheet" />
-    <link href="css/style_connexion.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/style_config.css" rel="stylesheet" />
+    <link href="../css/style_connexion.css" rel="stylesheet" />
 
 </head>
 
@@ -49,10 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="inscription.php#inscription">Inscription</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php#config">Config</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php#signup">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="formulaire.php#location">Reservation</a></li>
+                <li class="nav-item"><a class="nav-link" href="../inscription.php#inscription">Inscription</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php#config">Config</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.php#signup">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../formulaire.php#location">Reservation</a></li>
                 </ul>
             </div>
         </div>
@@ -86,7 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <label for="mot_de_passe"><b style="color:#fff;">Mot de passe :</b></label>
                                     <input type="password" placeholder="Entrer votre mot de passe" name="mot_de_passe" required>
 
-                                    <br><br>
+                                    <div style="color:#fff;">
+                                    Déjà un compte ? <a href="connexion.php">Connectez-vous.</a>
+                                    </div>
 
                                     <input type="submit" id='submit' value="S'inscrire" class="btn_2">
                                 </form>
@@ -144,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
