@@ -1,5 +1,5 @@
 <?php
-include("connexion2/Location.php")
+include("class/Location.php")
 
 ?>
 
@@ -45,7 +45,7 @@ include("connexion2/Location.php")
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="inscription.php#inscription">Inscription</a></li>
+                <li class="nav-item"><a class="nav-link" href="co_inscr/inscription.php#inscription">Inscription</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php#config">Config</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php#signup">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="formulaire.php#location">Reservation</a></li>                </ul>
@@ -73,10 +73,10 @@ include("connexion2/Location.php")
                         <h2 style="font-size:35px">Reservation</h2>
                         <?php
                         try {
-                            $ipserver = "192.168.64.140";
-                            $nomBase = "td_BDD";
-                            $loginPrivilege = "root";
-                            $passPrivilege = "root";
+                            $ipserver = "exodialtdbdd.mysql.db";
+                            $nomBase = "exodialtdbdd";
+                            $loginPrivilege = "exodialtdbdd";
+                            $passPrivilege = "Minibn80";
                             $GLOBALS["pdo"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
                         ?>
                             <?php
