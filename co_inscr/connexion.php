@@ -1,6 +1,6 @@
 <?php
 session_start()
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -16,7 +16,9 @@ session_start()
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../css/styles.css" rel="stylesheet" />
     <!-- truc jeu -->
@@ -29,13 +31,15 @@ session_start()
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="../index.php#page-top">LRDHG</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../inscription.php#inscription">Inscription</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../inscription.php#inscription">Inscription</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.php#config">Config</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.php#signup">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="../formulaire.php#location">Reservation</a></li>
@@ -46,108 +50,100 @@ session_start()
     <!-- Masthead-->
     <header class="masthead">
         <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-            <div class="d-flex justify-content-center">
-                <div class="text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">LRDHG</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
-                    <a class="btn btn-primary" href="#config">Les config</a>
-                    <a class="btn btn-primary" href="inscription.php">créer votre compte</a>
-                </div>
-            </div>
+            <section class="pricing_part padding_top" id="inscription">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="section_tittle text-center">
+                                <?php
+                                try {
+                                    $ipserver = "exodialtdbdd.mysql.db";
+                                    $nomBase = "exodialtdbdd";
+                                    $loginPrivilege = "exodialtdbdd";
+                                    $passPrivilege = "Minibn80";
+                                    $GLOBALS["bdd"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
+
+                                } catch (Exception $error) {
+                                    echo $error->getMessage();
+                                }
+
+                                if (isset($_POST['connexion'])) {
+                                    //oui
+                                    $ReqSql = 'SELECT * FROM `client` WHERE `nom` = "' . $_POST['nom'] . '" AND `mot_de_passe` = "' . $_POST['mot_de_passe'] . '"; ';
+
+                                    $result = $bdd->query($ReqSql);
+                                    if ($result->rowCount() > 0) {
+                                        $_SESSION['Connexion'] = true;
+
+                                    } else {
+                                        echo " mauvais log ";
+                                    }
+
+                                } else {
+                                    //non
+                                }
+
+                                if (isset($_POST['deconnexion'])) {
+                                    echo "Vous êtes bien déconnecter.";
+                                    session_unset();
+                                    session_destroy();
+                                }
+
+                                if (isset($_SESSION['Connexion'])) {
+                                    ?>
+
+                                    <h2 style="font-size:35px">Connexion</h2>
+                                    <form action="" method="post">
+
+                                        <input type="submit" name="deconnexion" value="Déconnexion" class="btn_2" required>
+                                    </form>
+                                    <?php
+
+                                } else {
+                                    ?>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 col-sm-6" style="width:500px">
+                                <div class="single_pricing_part">
+                                    <form action="" method="post">
+
+
+                                        <label><b style="color:#fff;">Nom :</b></label><br>
+                                        <input type="text" name="nom" value="HAUTEMANIERE" required>
+                                        <br><br>
+
+
+                                        <label><b style="color:#fff;">Mot de passe :</b></label><br>
+                                        <input type="text" name="mot_de_passe" value="root" required>
+
+                                        <br><br>
+
+
+                                        <div style="color:#fff;">
+                                            Pas encore de compte ? <a href="inscription.php">Inscivez-vous.</a>
+                                        </div>
+
+
+                                        <input type="submit" name="connexion" class="btn_2">
+
+
+
+                                    </form>
+                                    <?php
+                                }
+
+
+
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+            </section>
         </div>
     </header>
-    <!-- connexion-->
- <section class="pricing_part padding_top" id="location">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_tittle text-center">
-   <?php
-         try {
-            $ipserver = "exodialtdbdd.mysql.db";
-            $nomBase = "exodialtdbdd";
-            $loginPrivilege = "exodialtdbdd";
-            $passPrivilege = "Minibn80";
-            $GLOBALS["bdd"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
-
-            } catch (Exception  $error) {
-            echo $error->getMessage();
-            }
-
-
-
-        if(isset($_POST['connexion'])){
-            //oui
-            $ReqSql = 'SELECT * FROM `client` WHERE `nom` = "'.$_POST['nom'].'" AND `mot_de_passe` = "'.$_POST['mot_de_passe'].'"; ';
-
-            $result = $bdd->query($ReqSql);
-            if($result->rowCount()>0){
-                $_SESSION['Connexion'] = true;
-
-            }else{ 
-                echo" mauvais log ";
-            }
-
-        }else{
-            //non
-        }
-
-        if(isset($_POST['deconnexion'])){
-            echo "Vous êtes bien déconnecter.";
-            session_unset();
-            session_destroy();
-        }
-        
-        if(isset($_SESSION['Connexion'])){
-            ?>
-            
-            <h2 style="font-size:35px">Connexion</h2>
-            <form action="" method="post">
-
-               <input type="submit" name="deconnexion" value="Déconnexion" class="btn_2" required>
-           </form>
-            <?php
-
-        }else{
-            ?>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-sm-6" style="width:500px">
-                    <div class="single_pricing_part">
-         <form action="" method="post">
-
-
-            <label><b style="color:#fff;">Nom :</b></label><br>
-            <input type="text" name="nom" value="HAUTEMANIERE" required>
-            <br><br>
-
-
-            <label><b style="color:#fff;">Mot de passe :</b></label><br>
-            <input type="text" name="mot_de_passe" value="root" required>
-
-            <br><br>
-
-
-            <div style="color:#fff;">
-            Pas encore de compte ? <a href="inscription.php">Inscivez-vous.</a>
-            </div >
-
-
-            <input type="submit" name="connexion" class="btn_2" >
-            
-
-
-        </form>
-         <?php
-        }
-
-
-
-    ?>
-                    </div>
-                </div>
-            </div>
-    </section>
     <!-- Contact-->
     <section class="contact-section bg-black" id="signup" style="padding-top:400px">
         <div class="container px-4 px-lg-5">
@@ -190,7 +186,8 @@ session_start()
     </section>
     <!-- Footer-->
     <footer class="footer bg-black small text-center text-white-50">
-        <div class="container px-4 px-lg-5">Copyright &copy; Tom LEFEVRE, Edouard HAUTEMANIERE 2023 | SN1 La Providence Amiens</div>
+        <div class="container px-4 px-lg-5">Copyright &copy; Tom LEFEVRE, Edouard HAUTEMANIERE 2023 | SN1 La Providence
+            Amiens</div>
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
